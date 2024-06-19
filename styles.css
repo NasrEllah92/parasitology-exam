@@ -7,11 +7,26 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #e0f7fa, #e0f2f1);
     color: #333;
     line-height: 1.6;
+    scroll-behavior: smooth;
+    animation: backgroundAnimation 15s infinite;
 }
 
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Container Animation */
 .container {
     max-width: 800px;
     margin: auto;
@@ -20,14 +35,37 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #4a90e2;
-    font-size: 28px;
+    color: #6a1b9a;
+    font-size: 32px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: textSlideIn 1.5s forwards;
+}
+
+@keyframes textSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Form Styling */
@@ -38,12 +76,29 @@ form {
 label {
     display: inline-block;
     margin-right: 10px;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f3e5f5;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+    border-color: #6a1b9a;
+    box-shadow: 0 0 8px rgba(106, 27, 154, 0.5);
 }
 
 input[type="checkbox"] {
     margin-right: 5px;
-    /* Rounded corners for checkboxes */
     border-radius: 5px;
+    accent-color: #6a1b9a;
 }
 
 /* Button Styling */
@@ -52,33 +107,103 @@ input[type="checkbox"] {
     width: 100%;
     padding: 15px;
     margin-top: 20px;
-    background-color: #4a90e2;
+    background-color: #6a1b9a;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    animation: btnSlideIn 1s forwards;
+}
+
+@keyframes btnSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .btn-submit:hover, .btn-upload:hover {
-    background-color: #357ab7;
+    background-color: #4a148c;
+    transform: scale(1.05);
+}
+
+.btn-submit:focus, .btn-upload:focus {
+    outline: none;
+    box-shadow: 0 0 5px #6a1b9a;
+}
+
+.btn-submit:after, .btn-upload:after {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.btn-submit:active:after, .btn-upload:active:after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-submit:active, .btn-upload:active {
+    transform: scale(1);
+}
+
+/* Scroll Progress Indicator */
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #6a1b9a;
+    z-index: 100;
 }
 
 /* Questions Styling */
 .question {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #fafafa;
+    background-color: #e8f5e9;
     border-radius: 5px;
     border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+    animation: questionFadeIn 1.5s forwards;
+}
+
+@keyframes questionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question:hover {
+    transform: scale(1.02);
 }
 
 .question p {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 500;
+    color: #6a1b9a;
 }
 
 .options {
@@ -88,16 +213,22 @@ input[type="checkbox"] {
 }
 
 .option-label {
-    background-color: #e6e6e6; /* Slight background for answer options */
+    background-color: #d1c4e9;
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .option-label:hover {
-    background-color: #d4d4d4;
+    background-color: #b39ddb;
+    transform: translateY(-2px);
+}
+
+.option-label:focus {
+    outline: none;
+    box-shadow: 0 0 5px #6a1b9a;
 }
 
 /* Result Display */
@@ -106,16 +237,17 @@ input[type="checkbox"] {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    color: #6a1b9a;
 }
 
 /* Feedback Colors */
 .correct {
-    background-color: green;
+    background-color: #43a047;
     color: white;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #e53935;
     color: white;
 }
 
@@ -123,6 +255,7 @@ input[type="checkbox"] {
 @media (max-width: 600px) {
     .container {
         padding: 10px;
+        animation: fadeInUp 1s forwards; /* Ensure animation works on mobile */
     }
 
     .options {
@@ -132,13 +265,45 @@ input[type="checkbox"] {
     .btn-submit, .btn-upload {
         font-size: 16px;
         padding: 12px;
+        animation: btnSlideIn 1s forwards; /* Ensure animation works on mobile */
     }
 
     h1 {
         font-size: 24px;
+        animation: textSlideIn 1.5s forwards; /* Ensure animation works on mobile */
     }
 
     .question p {
         font-size: 16px;
+        animation: questionFadeIn 1.5s forwards; /* Ensure animation works on mobile */
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    animation: fadeIn 1s forwards;
+}
+
+.back-to-top:hover {
+    background-color: #4a148c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
