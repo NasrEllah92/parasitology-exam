@@ -127,10 +127,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 resultMessage.style.color = 'red';
             }
             resultMessage.textContent = `${message} ${finalScore.toFixed(2)}/20`;
-        });
-    } else {
-        console.error('Formulaire d\'examen non trouvé.');
-    }
 
-    loadQuestions();
-});
+                        // Display modal with result message
+                        const modal = document.getElementById('result-modal');
+                        const modalMessage = document.getElementById('modal-message');
+                        const closeModalBtn = document.getElementById('close-modal-btn');
+                        const modalCloseBtn = document.getElementById('modal-close-btn');
+            
+                        if (finalScore > 15) {
+                            modalMessage.textContent = 'Khebach XD';
+                            modalMessage.style.color = 'green';
+                        } else if (finalScore >= 10) {
+                            modalMessage.textContent = `Félicitations, voici votre note : ${finalScore.toFixed(2)}/20`;
+                            modalMessage.style.color = 'blue';
+                        } else {
+                            modalMessage.textContent = `Désolé, voici votre note : ${finalScore.toFixed(2)}/20`;
+                            modalMessage.style.color = 'red';
+                        }
+            
+                        modal.style.display = 'block';
+            
+                        // Close the modal when close button or outside modal is clicked
+                        closeModalBtn.onclick = function() {
+                            modal.style.display = 'none';
+                        }
+            
+                        modalCloseBtn.onclick = function() {
+                            modal.style.display = 'none';
+                        }
+            
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = 'none';
+                            }
+                        };
+                    });
+                } else {
+                    console.error('Formulaire d\'examen non trouvé.');
+                }
+            
+                loadQuestions();
+            });
+            
