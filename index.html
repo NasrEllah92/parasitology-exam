@@ -7,16 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Reveal Your Note in the Parasitology Exam</title>
-    <link rel="stylesheet" href="styles.css?v=1.0.0">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVKEGZFR4K"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-YVKEGZFR4K');
-    </script>
+    <link rel="stylesheet" href="styles.css?v=1.0.1">
 </head>
 <body>
     <div id="progress"></div>
@@ -32,13 +23,22 @@
     <!-- Modal -->
     <div id="result-modal" class="modal">
         <div class="modal-content">
-            <span id="close-modal-btn" class="close">&times;</span>
-            <p id="modal-message">Modal message goes here.</p>
+            <div class="modal-header">
+                <span id="close-modal-btn" class="modal-close">&times;</span>
+                <h2>Résultat de l'examen</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modal-message">Modal message goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-close-btn" class="btn-submit">Fermer</button>
+            </div>
         </div>
     </div>
 
     <div id="back-to-top" class="back-to-top">&#8593;</div>
-    <script src="scripts.js?v=1.0.2"></script>
+
+    <script src="scripts.js?v=1.0.1"></script>
     <script>
         // Scroll progress indicator function
         window.addEventListener('scroll', function() {
