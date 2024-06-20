@@ -307,7 +307,6 @@ input[type="checkbox"] {
         opacity: 1;
     }
 }
-
 /* Modal Styles */
 .modal {
     display: none;
@@ -322,65 +321,67 @@ input[type="checkbox"] {
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: #ffffff;
+    margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px; /* Adjust as needed */
     width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation-name: modal-open;
     animation-duration: 0.4s;
 }
 
+.modal-header {
+    background-color: #6a1b9a;
+    color: #ffffff;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: right;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 .modal-close {
-    color: #aaa;
+    color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    line-height: 1;
 }
 
 .modal-close:hover,
 .modal-close:focus {
-    color: black;
+    color: #333333;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header {
-padding: 10px 16px;
-background-color: #6a1b9a;
-color: white;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-}
-
-.modal-body {
-padding: 16px;
-}
-
-.modal-footer {
-padding: 10px 16px;
-background-color: #f1f1f1;
-border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
-text-align: right;
-}
-
 @media (max-width: 600px) {
-.modal-content {
-width: 90%;
-}
+    .modal-content {
+        width: 90%;
+    }
 }
 
 /* Animation for Modal */
 @keyframes modal-open {
-from {
-opacity: 0;
-transform: scale(0.9);
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
-to {
-opacity: 1;
-transform: scale(1);
-}
-}
+
