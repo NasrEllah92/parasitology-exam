@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
             let score = 0;
 
             const correctAnswers = [
-                ['c', 'e'],         // Question 1
+                ['a'],     // Question 1
                 ['c', 'e'],         // Question 2
                 ['a', 'b', 'd'],    // Question 3
                 ['b', 'c'],         // Question 4
                 ['a', 'e'],         // Question 5
-                ['b'],              // Question 6
+                ['b', 'd', 'e'],    // Question 6
                 ['c', 'd'],         // Question 7
-                ['a'],              // Question 8
+                ['a', 'd'],              // Question 8
                 ['d'],              // Question 9
                 ['a', 'b'],         // Question 10
                 ['c', 'e'],         // Question 11
