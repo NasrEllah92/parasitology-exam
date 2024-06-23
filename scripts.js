@@ -1,7 +1,7 @@
 // Function to generate 40 questions with options
 function generateQuestions() {
     const questions = [];
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 32; i++) {
         questions.push({
             question: `Question ${i + 1}: cochez les cases que vous avez choisies à l'examen`,
             options: ['a', 'b', 'c', 'd', 'e']
@@ -78,14 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ['c'],              // Question 30
                 ['a'],              // Question 31
                 ['b', 'd'],         // Question 32
-                ['c', 'e'],         // Question 33
-                ['a', 'b', 'd'],    // Question 34
-                ['c', 'e'],         // Question 35
-                ['a', 'b', 'c'],    // Question 36
-                ['d', 'e'],         // Question 37
-                ['a', 'b'],         // Question 38
-                ['c', 'd'],         // Question 39
-                ['a', 'e']          // Question 40
+              
             ];
 
             correctAnswers.forEach((correct, index) => {
