@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let score = 0;
 
             const correctAnswers = [
-                ['b', 'c', 'd'],     // Question 1
+                ['b', 'c', 'e'],     // Question 1
                 ['a', 'd', 'e'],         // Question 2
                 ['c', 'd'],    // Question 3
                 ['a'],         // Question 4
