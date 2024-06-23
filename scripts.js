@@ -46,38 +46,38 @@ document.addEventListener('DOMContentLoaded', function () {
             let score = 0;
 
             const correctAnswers = [
-                ['a'],     // Question 1
-                ['c', 'e'],         // Question 2
-                ['a', 'b', 'd'],    // Question 3
-                ['b', 'c'],         // Question 4
-                ['a', 'e'],         // Question 5
-                ['b', 'd', 'e'],    // Question 6
-                ['c', 'd'],         // Question 7
+                ['b', 'c', 'd'],     // Question 1
+                ['a', 'd', 'e'],         // Question 2
+                ['c', 'd'],    // Question 3
+                ['a'],         // Question 4
+                ['c', 'e'],         // Question 5
+                ['a', 'b', 'd'],    // Question 6
+                ['a', 'b', 'd'],         // Question 7
                 ['a', 'd'],              // Question 8
-                ['d'],              // Question 9
-                ['a', 'b'],         // Question 10
-                ['c', 'e'],         // Question 11
-                ['a', 'c', 'd'],    // Question 12
-                ['b', 'e'],         // Question 13
-                ['a'],              // Question 14
-                ['b', 'd'],         // Question 15
-                ['a', 'c'],         // Question 16
-                ['b', 'd'],         // Question 17
-                ['c', 'e'],         // Question 18
-                ['a', 'b'],         // Question 19
-                ['d'],              // Question 20
-                ['a', 'c'],         // Question 21
-                ['b'],              // Question 22
-                ['d'],              // Question 23
-                ['a', 'b'],         // Question 24
-                ['c', 'd'],         // Question 25
-                ['a', 'e'],         // Question 26
-                ['b', 'c'],         // Question 27
-                ['a', 'd'],         // Question 28
-                ['b', 'e'],         // Question 29
-                ['c'],              // Question 30
-                ['a'],              // Question 31
-                ['b', 'd'],         // Question 32
+                ['a', 'b', 'd'],              // Question 9
+                ['a', 'b', 'e'],         // Question 10
+                ['a', 'b'],         // Question 11
+                ['d', 'e'],    // Question 12
+                ['a', 'b'],         // Question 13
+                ['a', 'e'],              // Question 14
+                ['a', 'c'],         // Question 15
+                ['b', 'c'],         // Question 16
+                ['a', 'd'],         // Question 17
+                ['a', 'd'],         // Question 18
+                ['a', 'd'],         // Question 19
+                ['d', 'e'],              // Question 20
+                ['b', 'd'],         // Question 21
+                ['d'],              // Question 22
+                ['b', 'c'],              // Question 23
+                ['d', 'e'],         // Question 24
+                ['c', 'e'],         // Question 25
+                ['c'],         // Question 26
+                ['a', 'c'],         // Question 27
+                ['b', 'e'],         // Question 28
+                ['a', 'c', 'd'],         // Question 29
+                ['c', 'd'],              // Question 30
+                ['b'],              // Question 31
+                ['a'],         // Question 32
               
             ];
 
