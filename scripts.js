@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ['a', 'b', 'd'],    // Question 6
                 ['a', 'b', 'd'],         // Question 7
                 ['a', 'd'],              // Question 8
-                ['a', 'b', 'd'],              // Question 9
+                ['a', 'b', 'e'],              // Question 9
                 ['a', 'b', 'e'],         // Question 10
                 ['a', 'b'],         // Question 11
                 ['d', 'e'],    // Question 12
